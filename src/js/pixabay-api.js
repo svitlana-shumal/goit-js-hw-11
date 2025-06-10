@@ -14,8 +14,9 @@ export function getImagesByQuery(query) {
 
   return axios.get(url, { params }).then(response => {
     if (response.data.hits.length === 0) {
-      throw new Error(`Sorry, there are no images matching your search query. Please try again!
-`);
+      throw new Error(
+        'Sorry, there are no images matching your search query. Please try again!'
+      );
     }
     return response.data;
   });
